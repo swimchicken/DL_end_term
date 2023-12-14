@@ -172,3 +172,12 @@ history = model.fit(train_dataset,
             batch_size = BATCH_SIZE,
             validation_data=val_dataset,
             callbacks = [es, save_best, plateau])
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'validation'], loc='upper left')
+plt.yscale('log')
+plt.show()
