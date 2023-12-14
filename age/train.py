@@ -165,7 +165,7 @@ model.compile(tf.keras.optimizers.Adam(learning_rate=1e-4), loss = ['mse', 'cate
 plateau = tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.3, patience=2, verbose = 1)  ## Reduce learning rate when a metric has stopped improving.
 
 es = tf.keras.callbacks.EarlyStopping(monitor='val_loss', mode='min', verbose=1,patience=5)  ## Early stopping (stops training when validation doesn't improve for {patience} epochs)
-save_best = tf.keras.callbacks.ModelCheckpoint('weights_v1.h5', monitor='val_loss', save_best_only=True,mode='min', save_weights_only = True)  ## Saves the best version of the model to disk (as measured on the validation data set)
+save_best = tf.keras.callbacks.ModelCheckpoint('age.h5', monitor='val_loss', save_best_only=True,mode='min', save_weights_only = True)  ## Saves the best version of the model to disk (as measured on the validation data set)
 
 history = model.fit(train_dataset,
             epochs=EPOCHS,
