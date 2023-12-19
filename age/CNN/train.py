@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 DATA_DIR = "/content/drive/MyDrive/2023DeepLearning/UTKFace"
-#DATA_DIR = "/content/data"
+
 TRAIN_TEST_SPLIT = 0.7
 IM_WIDTH = IM_HEIGHT = 198
 ID_GENDER_MAP = {0: 'male', 1: 'female'}
