@@ -98,21 +98,15 @@ time_callback_resid = TimeHistory()
 # vgg網路
 
 def vgg_block(layer_in, n_filters, n_conv):
-    # add convolutional layers
     for _ in range(n_conv):
         layer_in = Conv2D(n_filters, (3, 3), padding='same', activation='relu')(layer_in)
-    # add max pooling layer
     layer_in = MaxPooling2D((2, 2), strides=(2, 2))(layer_in)
     return layer_in
 
 
-# define model input
 visible = Input(shape=(48, 48, 1))
-# add vgg module
 layer = vgg_block(visible, 64, 2)
-# add vgg module
 layer = vgg_block(layer, 128, 2)
-# add vgg module
 layer = vgg_block(layer, 256, 4)
 
 layer = Flatten()(layer)
